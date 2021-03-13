@@ -1,0 +1,8 @@
+## General
+This repo contains a script "run_analysis.R" to read the data in the repo, output an tidy data & perform analysis on the tidy data,
+and produce an final answer df named "final_summary_df" to be printed out in the console
+
+## Table of content
+1. Data used in "data/UCI HAR Dataset directory"
+2. Script "run_analysis.R" to load data and run the analysis
+3. An already tidy dataset "tidyData.txt" for the analysis purpose

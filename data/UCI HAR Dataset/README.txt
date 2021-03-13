@@ -4,7 +4,7 @@ Version 1.0
 ==================================================================
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Universit‡ degli Studi di Genova.
+DITEN - Universit√† degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
@@ -51,6 +51,27 @@ The following files are available for the train and test data. Their description
 - 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
+
+Tidy Dataset generation notes:
+=========================================
+'tidyData.txt" generated on the project directory is firstly merged with the test and train data of all X, y and subject values.
+And then, the y values are renamed to a more descriptive value to represent the activities
+
+The column is then renamed to 
+- Subject to "indv_no" (individual) for more clarity
+- y to "activity" for more clarity
+- Rest of the column names to the names listed in features.txt
+
+Then, only the column which the name contains 'mean' and 'std' is extracted.
+
+Analysis notes:
+=========================================
+The final data frame "final_summary_df" output by the analysis has a new column "key" to form a value pair
+replacing "indv_no" and "activity" columns, with the format (<indv_no>_<activity)
+For example, 1_STANDING means Individual #1 with sensor determined as Standing.
+
+The data frame consist of the means of the included column as per the column name, 
+associated with Individual # and the activities detected by the sensor
 
 Notes: 
 ======

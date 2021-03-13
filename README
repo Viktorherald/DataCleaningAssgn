@@ -4,7 +4,10 @@ This repo contains a script "run_analysis.R" to read the data in the repo, outpu
 and produce an final answer df named "final_summary_df" to be printed out in the console
 
 The codebook is updated to explain the tidy dataset and final summary data
-within the README file of the dataset
+within the README file of the dataset under below sections
+
+- Tidy Dataset generation notes
+- Analysis notes
 
 ## Table of content
 

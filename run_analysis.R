@@ -2,17 +2,6 @@
 library(dplyr)
 library(reshape2)
 
-## --- Create Directory and download, unzip file ---
-
-if (!file.exists("data")) {
-  dir.create("data")
-}
-
-download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip",
-              "data\\data.zip")
-setwd("data")
-unzip("data.zip")
-
 ## --- Reading files to variables ---
 
 setwd("UCI HAR Dataset")
@@ -50,6 +39,8 @@ names(full_df) <- gsub("\\.", "", names(full_df))
 full_df <- full_df %>% 
   mutate(activity = act_names[activity]) 
 
+setwd("..\\..\\..")
+write.table(full_df, file = "tidyData.txt", row.names = FALSE)
 ## --- Analysis of mean of var
 
 molten_df <- melt(full_df, id = c("indv_no", "activity"), 
